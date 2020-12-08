@@ -42,3 +42,39 @@ ssid: Bx55OWbHJ0Vt_IGIFÍ
 
 Írj egy olyan objectet, amely az alábbi három metódust megvalósítja: - kiolvassa a sütik nevét, és értékét - átmenti őket sessionStorage-be - törli a sütiket
 */
+
+cookieHandler.setCookie('viewed', '5');
+cookieHandler.setCookie('uid', '354774631237');
+cookieHandler.setCookie('ssid', 'Bx55OWbHJ0Vt_IGIFÍ');
+
+const cookieToSessionStorage = {
+    getCookie(name) {
+        return cookieHandler.getCookie(name);
+        //console.log(cookieHandler.getCookie(name));
+    },
+    toSStorage(name, value) {
+        sessionStorage.setItem(name, value);
+    },
+    delCookie(name) {
+        cookieHandler.deleteCookie(name);
+    },
+    moveToSession(name) {
+        const value = this.getCookie(name);
+        this.delCookie(name);
+        this.toSStorage(name, value);
+    },
+}
+
+cookieToSessionStorage.moveToSession('viewed');
+cookieToSessionStorage.moveToSession('uid');
+cookieToSessionStorage.moveToSession('ssid');
+
+
+
+// 3. feladat
+/*
+Adott egy json file, ami valójában egy tömb, lastName, firstName propertyket tartalmazó objektumokkal.
+Írj egy függvényt, ami indít egy ajax kérést, ami elkéri a json tartalmát, és a firstName, lastName párosokat egymás alá beleírja egy div-en belüli p-tagekbe, és létrehoz egy users nevű bejegyzés a localStorage-be, ahol a json tartalmát letárolja.
+Módosítsd a függvényt úgy, hogy amennyiben a localStorage-ba van users bejegyzés, úgy onnan olvassa ki az adatokat, ha nincs csak akkor küldjön ajax kérést.
+*/
+
