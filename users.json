@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "firstName": "Bob",
+            "lastName": "Firpo"
+        },
+        {
+            "firstName": "Charlie",
+            "lastName": "Firpo"
+        },
+        {
+            "firstName": "Jack",
+            "lastName": "Firpo"
+        },
+        {
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Doe"
+        }
+    ]
+}
